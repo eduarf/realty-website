@@ -1,0 +1,19 @@
+{
+  "name": "real-estate",
+  "version": "1.0.0",
+  "description": "real estate website",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "node-sass sass/main.scss css/style.css"
+  },
+  "keywords": [
+    "Software",
+    "real",
+    "estate"
+  ],
+  "author": "The Great B",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^7.0.3"
+  }
+}
