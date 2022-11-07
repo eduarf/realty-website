@@ -9,4 +9,23 @@ html {
   font-size: 62.5%; }
 
 body {
-  font-family: 'Karla', sans-serif; }
+  font-family: 'Karla', sans-serif;
+  background-color: #fffffe; }
+
+.container {
+  display: grid;
+  grid-template-columns: [container-start] 1fr [center-start] repeat(10, [col-start] minmax(min-content, 11rem) [col-end]) [center-end] 1fr [container-end];
+  grid-template-rows: 100vh repeat(8, min-content); }
+
+.booking-content {
+  background-color: #3da9fc;
+  grid-column: center-start / col-end 6; }
+
+.booking-date {
+  background-color: #094067;
+  grid-column: col-start 7 / center-end; }
+
+.header {
+  background-color: #094067;
+  grid-column: container-start / container-end;
+  grid-row: 1 / 2; }
