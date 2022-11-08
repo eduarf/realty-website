@@ -19,11 +19,60 @@ body {
 
 .booking-content {
   background-color: #3da9fc;
-  grid-column: center-start / col-end 6; }
+  grid-column: center-start / col-end 6;
+  height: 40rem; }
 
 .booking-date {
   background-color: #094067;
-  grid-column: col-start 7 / center-end; }
+  grid-column: col-start 7 / center-end;
+  height: 40rem; }
+
+.events-content {
+  background-color: #ef4565;
+  grid-column: container-start / col-end 9;
+  height: 40rem; }
+
+.events-text {
+  background-color: #3da9fc;
+  grid-column: col-start 10 / center-end; }
+
+.features-content {
+  background-color: #3da9fc;
+  height: 40rem;
+  grid-column: container-start / col-end 9; }
+
+.features-text {
+  background-color: #ef4565;
+  grid-column: col-start 10 / center-end; }
+
+.gallery-text {
+  background-color: #90b4ce;
+  grid-column: center-start / col-end 1;
+  height: 400px; }
+
+.gallery-carousel {
+  background-color: #094067;
+  grid-column: col-start 2 / container-end; }
+
+.motto {
+  height: 400px;
+  grid-column: container-start / container-end;
+  background-color: #094067; }
+
+.testimonials {
+  background-color: #ef4565;
+  grid-column: center-start / center-end;
+  height: 40rem; }
+
+.villas {
+  background-color: #3da9fc;
+  grid-column: container-start / container-end;
+  height: 40rem; }
+
+.footer {
+  background-color: #90b4ce;
+  grid-column: container-start / container-end;
+  height: 40rem; }
 
 .header {
   background-color: #094067;

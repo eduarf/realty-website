@@ -1,8 +1,10 @@
 .booking-content{
     background-color: $color-highlight;
     grid-column: center-start / col-end 6;
+    height: 40rem;
 }
 .booking-date {
     background-color: $color-stroke;
     grid-column: col-start 7 / center-end;
+    height: 40rem;
 }

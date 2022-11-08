@@ -1,0 +1,9 @@
+.features-content{
+    background-color: $color-highlight;
+    height: 40rem;
+    grid-column: container-start / col-end 9;
+}
+.features-text{
+    background-color: $color-tertiary;
+    grid-column: col-start 10 / center-end;
+}

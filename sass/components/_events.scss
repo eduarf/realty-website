@@ -1,0 +1,9 @@
+.events-content {
+    background-color: $color-tertiary;
+    grid-column: container-start / col-end 9;
+    height: 40rem;
+}
+.events-text{
+    background-color: $color-highlight;
+    grid-column: col-start 10 / center-end;
+}

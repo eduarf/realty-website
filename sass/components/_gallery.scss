@@ -1,0 +1,9 @@
+.gallery-text{
+    background-color: $color-secondary;
+    grid-column: center-start / col-end 1;
+    height: 400px;
+}
+.gallery-carousel{
+    background-color: $color-stroke;
+    grid-column: col-start 2 / container-end;
+}
