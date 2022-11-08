@@ -1,5 +1,103 @@
+%hamburgerAndCheckbox{
+    position: absolute;
+    top: 3rem;
+    left: 3rem;
+    height: 5rem;
+    width: 5rem;
+}
 .header {
     background-color: $color-stroke;
     grid-column: container-start / container-end;
     grid-row: 1 / 2;
+    background-image: linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)) ,url(../images/headerbg.jpeg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    &__checkbox{
+        @extend %hamburgerAndCheckbox;
+        opacity: 0;
+        cursor: pointer;
+        z-index: 3;
+    }
+    &__checkbox:checked + &__hamburger > div::after{
+        left: 0;
+        top: 0;
+        width: 100%;
+        transform: rotate(-90deg);
+    } 
+    &__checkbox:checked + &__hamburger > div{
+        transform: rotate(45deg);
+    }
+    &__checkbox:checked + &__hamburger > div::before{
+        opacity: 0;
+    } 
+    &__navigation{
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 2;
+    }
+    &__hamburger{
+        @extend %hamburgerAndCheckbox;
+        padding: 1rem;
+        background-color: $color-tertiary;
+        z-index: 2;
+        display: grid;
+        place-items: center;
+    }
+    &__checkbox:checked ~ &__menu{
+        visibility: visible;
+        opacity: 1;
+        top: 0;
+    } 
+    &__menu {
+        position: fixed;
+        top: -100rem;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0,0,0,.7);
+        visibility: hidden;
+        opacity: 0;
+        transition: all $transition-duration;
+    }
+    &__hamburger > div {
+        position: relative;
+        height: .3rem;
+        width: 100%;
+        background-color: $color-main;
+        transition: all $transition-duration;
+        &::before,
+        &::after{
+            content: '';
+            position: absolute;
+            top: -1rem;
+            width: 75%;
+            height: inherit;
+            background-color: inherit;
+            z-index: 2;
+        }
+        &::before{
+            left: 0;
+        }
+        &::after{
+            top: 1rem;
+            right: 0;
+        }
+    }
+    &__item{
+        list-style: none;
+        margin-bottom: 4rem;
+    }
+    &__link:link,
+    &__link:visited{
+        color: $color-main;
+        text-decoration: none;
+        font-size: calc(0.7rem + 1vw);
+        border-radius: 0.3rem;
+        position: relative;
+        transition: all $transition-duration cubic-bezier(1,0,0,1);
+        z-index: 1;
+    }
 }

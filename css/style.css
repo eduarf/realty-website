@@ -17,6 +17,11 @@ body {
   grid-template-columns: [container-start] 1fr [center-start] repeat(10, [col-start] minmax(min-content, 11rem) [col-end]) [center-end] 1fr [container-end];
   grid-template-rows: 100vh repeat(8, min-content); }
 
+.paragraph {
+  color: #5f6c7b;
+  font-size: calc(1rem + 1vw);
+  font-weight: 300; }
+
 .booking-content {
   background-color: #3da9fc;
   grid-column: center-start / col-end 6;
@@ -74,7 +79,86 @@ body {
   grid-column: container-start / container-end;
   height: 40rem; }
 
+.header__checkbox, .header__hamburger {
+  position: absolute;
+  top: 3rem;
+  left: 3rem;
+  height: 5rem;
+  width: 5rem; }
+
 .header {
   background-color: #094067;
   grid-column: container-start / container-end;
-  grid-row: 1 / 2; }
+  grid-row: 1 / 2;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../images/headerbg.jpeg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; }
+  .header__checkbox {
+    opacity: 0;
+    cursor: pointer;
+    z-index: 3; }
+  .header__checkbox:checked + .header__hamburger > div::after {
+    left: 0;
+    top: 0;
+    width: 100%;
+    transform: rotate(-90deg); }
+  .header__checkbox:checked + .header__hamburger > div {
+    transform: rotate(45deg); }
+  .header__checkbox:checked + .header__hamburger > div::before {
+    opacity: 0; }
+  .header__navigation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2; }
+  .header__hamburger {
+    padding: 1rem;
+    background-color: #ef4565;
+    z-index: 2;
+    display: grid;
+    place-items: center; }
+  .header__checkbox:checked ~ .header__menu {
+    visibility: visible;
+    opacity: 1;
+    top: 0; }
+  .header__menu {
+    position: fixed;
+    top: -100rem;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s; }
+  .header__hamburger > div {
+    position: relative;
+    height: .3rem;
+    width: 100%;
+    background-color: #fffffe;
+    transition: all 0.3s; }
+    .header__hamburger > div::before, .header__hamburger > div::after {
+      content: '';
+      position: absolute;
+      top: -1rem;
+      width: 75%;
+      height: inherit;
+      background-color: inherit;
+      z-index: 2; }
+    .header__hamburger > div::before {
+      left: 0; }
+    .header__hamburger > div::after {
+      top: 1rem;
+      right: 0; }
+  .header__item {
+    list-style: none;
+    margin-bottom: 4rem; }
+  .header__link:link, .header__link:visited {
+    color: #fffffe;
+    text-decoration: none;
+    font-size: calc(0.7rem + 1vw);
+    border-radius: 0.3rem;
+    position: relative;
+    transition: all 0.3s cubic-bezier(1, 0, 0, 1);
+    z-index: 1; }
