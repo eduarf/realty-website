@@ -61,6 +61,9 @@
         visibility: hidden;
         opacity: 0;
         transition: all $transition-duration;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     &__hamburger > div {
         position: relative;

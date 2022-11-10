@@ -23,59 +23,59 @@ body {
   font-weight: 300; }
 
 .booking-content {
-  background-color: #3da9fc;
+  background-color: #ffd803;
   grid-column: center-start / col-end 6;
   height: 40rem; }
 
 .booking-date {
-  background-color: #094067;
+  background-color: #272343;
   grid-column: col-start 7 / center-end;
   height: 40rem; }
 
 .events-content {
-  background-color: #ef4565;
+  background-color: #bae8e8;
   grid-column: container-start / col-end 9;
   height: 40rem; }
 
 .events-text {
-  background-color: #3da9fc;
+  background-color: #ffd803;
   grid-column: col-start 10 / center-end; }
 
 .features-content {
-  background-color: #3da9fc;
+  background-color: #ffd803;
   height: 40rem;
   grid-column: container-start / col-end 9; }
 
 .features-text {
-  background-color: #ef4565;
+  background-color: #bae8e8;
   grid-column: col-start 10 / center-end; }
 
 .gallery-text {
-  background-color: #90b4ce;
+  background-color: #e3f6f5;
   grid-column: center-start / col-end 1;
   height: 400px; }
 
 .gallery-carousel {
-  background-color: #094067;
+  background-color: #272343;
   grid-column: col-start 2 / container-end; }
 
 .motto {
   height: 400px;
   grid-column: container-start / container-end;
-  background-color: #094067; }
+  background-color: #272343; }
 
 .testimonials {
-  background-color: #ef4565;
+  background-color: #bae8e8;
   grid-column: center-start / center-end;
   height: 40rem; }
 
 .villas {
-  background-color: #3da9fc;
+  background-color: #ffd803;
   grid-column: container-start / container-end;
   height: 40rem; }
 
 .footer {
-  background-color: #90b4ce;
+  background-color: #e3f6f5;
   grid-column: container-start / container-end;
   height: 40rem; }
 
@@ -87,7 +87,7 @@ body {
   width: 5rem; }
 
 .header {
-  background-color: #094067;
+  background-color: #272343;
   grid-column: container-start / container-end;
   grid-row: 1 / 2;
   background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../images/headerbg.jpeg);
@@ -114,7 +114,7 @@ body {
     z-index: 2; }
   .header__hamburger {
     padding: 1rem;
-    background-color: #ef4565;
+    background-color: #bae8e8;
     z-index: 2;
     display: grid;
     place-items: center; }
@@ -131,7 +131,10 @@ body {
     background-color: rgba(0, 0, 0, 0.7);
     visibility: hidden;
     opacity: 0;
-    transition: all 0.3s; }
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
   .header__hamburger > div {
     position: relative;
     height: .3rem;
