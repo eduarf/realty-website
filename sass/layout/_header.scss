@@ -48,22 +48,21 @@
     }
     &__checkbox:checked ~ &__menu{
         visibility: visible;
-        opacity: 1;
-        top: 0;
+        transform: scaleX(1);
     } 
     &__menu {
         position: fixed;
-        top: -100rem;
+        top: 0;
         left: 0;
         height: 100%;
         width: 100%;
         background-color: rgba(0,0,0,.7);
         visibility: hidden;
-        opacity: 0;
+        transform: scaleX(0);
+        transform-origin: center;
         transition: all $transition-duration;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        display: grid;
+        place-items: center;
     }
     &__hamburger > div {
         position: relative;
@@ -92,12 +91,30 @@
     &__item{
         list-style: none;
         margin-bottom: 4rem;
+        padding: 1.8rem 5rem;
+        display: grid;
+        place-items: center;
+        cursor: pointer;
+        position: relative;
+        &::after {
+            content: '';
+            height: 100%;
+            width: 100%;
+            background-color: $color-tertiary;
+            position: absolute;
+            transform: scaleY(0);
+            transition: all $transition-duration;
+        }
+        &:hover::after {
+            transform: scaleY(1);
+        }
     }
     &__link:link,
     &__link:visited{
         color: $color-main;
         text-decoration: none;
         font-size: calc(0.7rem + 1vw);
+        font-weight: 800;
         border-radius: 0.3rem;
         position: relative;
         transition: all $transition-duration cubic-bezier(1,0,0,1);
