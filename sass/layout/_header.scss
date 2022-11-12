@@ -57,7 +57,7 @@
         left: 0;
         height: 100%;
         width: 100%;
-        background-color: rgba(0,0,0,.9);
+        background-color: rgba($color-stroke,.9);
         visibility: hidden;
         transform: scaleX(0);
         transform-origin: center;

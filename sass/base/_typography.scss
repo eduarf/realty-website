@@ -23,6 +23,11 @@
         }
     }
 }
+.heading-5 {
+    font-size: calc(1.2rem + 1.2vw);
+    font-weight: 500;
+    color: $color-stroke;
+}
 .paragraph{
     color: $color-paragraph;
     font-size: calc(1rem + 1vw);
