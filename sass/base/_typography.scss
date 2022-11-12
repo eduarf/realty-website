@@ -1,8 +1,17 @@
 
 
-
+.heading-1 {
+    font-size: calc(3rem + 3vw);
+    font-weight: 300;
+    text-transform: uppercase;
+    color: $color-main;
+}
 .paragraph{
     color: $color-paragraph;
     font-size: calc(1rem + 1vw);
     font-weight: 300;
+    &--big {
+        font-size: calc(1rem + 1.5vw);
+        font-weight: 500;
+    }
 }
