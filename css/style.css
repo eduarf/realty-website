@@ -38,6 +38,21 @@ body {
   text-transform: uppercase;
   color: #fffffe; }
 
+.heading-2 {
+  font-size: calc(2rem + 2vw);
+  font-weight: 300;
+  color: #000; }
+  .heading-2--underline {
+    position: relative; }
+    .heading-2--underline::after {
+      content: '';
+      position: absolute;
+      width: 35%;
+      height: .4rem;
+      background-color: #2aa683;
+      bottom: -1rem;
+      left: 0; }
+
 .paragraph {
   color: #5f6c7b;
   font-size: calc(1rem + 1vw);
@@ -45,11 +60,33 @@ body {
   .paragraph--big {
     font-size: calc(1rem + 1.5vw);
     font-weight: 500; }
+  .paragraph--line-height-big {
+    line-height: 2;
+    text-align: justify; }
 
 .booking-content {
-  background-color: #ff8906;
   grid-column: center-start / col-end 6;
-  height: 40rem; }
+  padding: 4rem;
+  display: grid;
+  grid-template-rows: repeat(3, max-content);
+  grid-gap: 2vh; }
+  .booking-content__icons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 2rem; }
+  .booking-content__weather, .booking-content__time {
+    display: grid;
+    grid-template-columns: .5fr 1fr;
+    grid-template-rows: 7vh;
+    place-items: center; }
+  .booking-content__icon {
+    height: calc(2rem + 2vw);
+    width: calc(2rem + 2vw);
+    fill: #2aa683; }
+  .booking-content__detail {
+    font-size: calc(1.6rem + 1vw);
+    font-weight: 400;
+    color: #5f6c7b; }
 
 .booking-date {
   background-color: #000;
@@ -57,25 +94,25 @@ body {
   height: 40rem; }
 
 .events-content {
-  background-color: #e53170;
+  background-color: #fc1833;
   grid-column: container-start / col-end 9;
   height: 40rem; }
 
 .events-text {
-  background-color: #ff8906;
+  background-color: #118499;
   grid-column: col-start 10 / center-end; }
 
 .features-content {
-  background-color: #ff8906;
+  background-color: #118499;
   height: 40rem;
   grid-column: container-start / col-end 9; }
 
 .features-text {
-  background-color: #e53170;
+  background-color: #fc1833;
   grid-column: col-start 10 / center-end; }
 
 .gallery-text {
-  background-color: #f25f4c;
+  background-color: #2aa683;
   grid-column: center-start / col-end 1;
   height: 400px; }
 
@@ -89,17 +126,17 @@ body {
   background-color: #000; }
 
 .testimonials {
-  background-color: #e53170;
+  background-color: #fc1833;
   grid-column: center-start / center-end;
   height: 40rem; }
 
 .villas {
-  background-color: #ff8906;
+  background-color: #118499;
   grid-column: container-start / container-end;
   height: 40rem; }
 
 .footer {
-  background-color: #f25f4c;
+  background-color: #2aa683;
   grid-column: container-start / container-end;
   height: 40rem; }
 
@@ -139,7 +176,7 @@ body {
     z-index: 2; }
   .header__hamburger {
     padding: 1rem;
-    background-color: #e53170;
+    background-color: #fc1833;
     z-index: 2;
     display: grid;
     place-items: center;
@@ -191,7 +228,7 @@ body {
       content: '';
       height: 100%;
       width: 100%;
-      background-color: #e53170;
+      background-color: #fc1833;
       position: absolute;
       transform: scaleY(0);
       transition: all 0.3s ease-out; }
@@ -220,7 +257,7 @@ body {
       font-size: 3rem;
       text-decoration: none;
       color: #fffffe;
-      background-color: #e53170;
+      background-color: #fc1833;
       display: inline-block;
       transition: all 0.3s; }
   .header__logo:hover > span:first-child {
@@ -246,5 +283,5 @@ body {
     transition: all .5s; }
     .header__button:link:hover, .header__button:visited:hover {
       background-color: #000;
-      border: 1px solid #e53170;
-      color: #e53170; }
+      border: 1px solid #fc1833;
+      color: #fc1833; }
