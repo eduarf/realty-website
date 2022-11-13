@@ -4,10 +4,17 @@
     display: grid;
     grid-template-rows: repeat(3, max-content);
     grid-gap: 2vh;
+    @media only screen and(max-width: $media-query-medium){
+        grid-column: center-start / center-end;
+        padding: 4vh 3vw;
+    }
     &__icons{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-column-gap: 2rem;
+        @media only screen and(max-width: $media-query-medium){
+            padding: 0 3rem;
+        }
     }
     &__weather,
     &__time{
@@ -16,6 +23,9 @@
         grid-template-rows: 10vh;
         justify-items: start;
         align-items: center;
+        @media only screen and(max-width: $media-query-medium){
+            grid-template-columns: .3fr 1fr;
+        }
     }
     &__icon{
         height: calc(2rem + 2vw);
@@ -33,6 +43,10 @@
     padding: $padding-section;
     display: grid;
     grid-template-rows: repeat(2, 1fr);
+    @media only screen and (max-width: $media-query-medium){
+        padding: 0 3vw;
+        grid-column: center-start / center-end;
+    }
     * > p:not(.paragraph){
         font-size: calc(1rem + 1vw);
         font-weight: 300;
@@ -47,7 +61,7 @@
     &__schedule--departure,
     &__schedule--guests{
         display: grid;
-        grid-row-gap: 3vw;       
+        grid-row-gap: calc(2vh + 2vw);       
     }
     &__schedule--arrival > h5,
     &__schedule--departure > h5,
@@ -73,6 +87,15 @@
         place-items: center;
         position: relative;
         grid-row-gap: 1rem;
+        @media only screen and (max-width: $media-query-medium){
+            padding: 3rem 5.2rem;
+        }
+        @media only screen and (max-width: $media-query-medium-small){
+            padding: 1.5rem 3.6rem;
+        }
+        @media only screen and (max-width: $media-query-small){
+            padding: 1.5rem 2.8rem;
+        }
         &::after {
             content: '';
             position: absolute;
@@ -88,8 +111,15 @@
     }
     &__contact{
         align-self: end;
+        @media only screen and (max-width: $media-query-medium){
+            align-self: center;
+            padding: 0 2vw;
+        }
         p:first-of-type {
             margin-top: 4rem;
+            @media only screen and (max-width: $media-query-medium){
+                margin-top: 2rem;
+            }
         }
         p:not(:first-of-type){
             margin-top: .8rem;
