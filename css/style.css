@@ -71,6 +71,9 @@ body {
     background-color: rgba(42, 166, 131, 0.5);
     transform: rotateZ(5deg);
     text-align: center; }
+  .heading-2--tertiary {
+    color: #2aa683;
+    font-weight: 600; }
 
 .heading-5 {
   font-size: calc(1.2rem + 1.2vw);
@@ -276,9 +279,17 @@ body {
   grid-column: col-start 2 / container-end; }
 
 .motto {
-  height: 400px;
   grid-column: container-start / container-end;
-  background-color: #000; }
+  background-color: #fffffe;
+  padding: 8vw 3vw; }
+  .motto__content {
+    text-align: center;
+    width: 80%;
+    margin: 0 auto; }
+  .motto h2 {
+    margin-bottom: 3rem; }
+  .motto p {
+    text-align: justify; }
 
 .testimonials {
   background-color: #fc1833;

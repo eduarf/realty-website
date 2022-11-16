@@ -34,6 +34,10 @@
         transform: rotateZ(5deg);
         text-align: center;
     }
+    &--tertiary {
+        color: $color-secondary;
+        font-weight: 600;
+    }
 }
 .heading-5 {
     font-size: calc(1.2rem + 1.2vw);
