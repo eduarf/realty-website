@@ -1,9 +1,54 @@
 .events-content {
-    background-color: $color-tertiary;
     grid-column: container-start / col-end 9;
-    height: 40rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    @media only screen and(max-width: $media-query-medium){
+        grid-column: container-start / container-end;
+        grid-template-columns: 1fr;
+        grid-row-gap: 1rem;
+    }
+    & > div {
+        padding: $padding-section;
+        display: grid;
+        grid-template-areas: 
+        'title' 
+        'paragraph';
+        grid-row-gap: 4vh;
+        align-items: center;
+        justify-items: start;
+        background-position: center;
+        background-size: cover;
+        grid-row-gap: calc(10vw);
+    }
+    h2 {
+        background-color: rgba($color-tertiary, .7);
+        grid-area: title;
+    }
+    p{
+        grid-area: paragraph;
+        color: $color-main;
+        font-weight: 500;
+    }
+    &__event-1{
+        background: linear-gradient(rgba($color-stroke, .2), rgba($color-stroke, .2)) ,url(../images/chritmas6.jpeg);
+    }
+    &__event-2 {
+        background: linear-gradient(rgba($color-stroke, .2), rgba($color-stroke, .2)) ,url(../images/chritmas2.jpeg);
+    }
 }
 .events-text{
-    background-color: $color-highlight;
+    background-color: $color-tertiary;
     grid-column: col-start 10 / center-end;
+    display: grid;
+    place-items: center;
+    @media only screen and(max-width: $media-query-medium-small-big){
+        display: none;
+    }
+    &__p {
+        transform: rotate(90deg);
+        display: inline-block;
+        font-size: 6rem;
+        color: $color-main;
+        letter-spacing: 1px;
+    }
 }

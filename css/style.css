@@ -68,7 +68,7 @@ body {
           left: 30%; } }
   .heading-2--white {
     color: #fffffe;
-    background-color: rgba(42, 166, 131, 0.5);
+    background-color: rgba(42, 166, 131, 0.7);
     transform: rotateZ(5deg);
     text-align: center; }
   .heading-2--tertiary {
@@ -252,13 +252,50 @@ body {
     animation: gradientAnim 3s ease infinite; }
 
 .events-content {
-  background-color: #fc1833;
   grid-column: container-start / col-end 9;
-  height: 40rem; }
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); }
+  @media only screen and (max-width: 50em) {
+    .events-content {
+      grid-column: container-start / container-end;
+      grid-template-columns: 1fr;
+      grid-row-gap: 1rem; } }
+  .events-content > div {
+    padding: 8vh 3vw;
+    display: grid;
+    grid-template-areas: 'title'  'paragraph';
+    grid-row-gap: 4vh;
+    align-items: center;
+    justify-items: start;
+    background-position: center;
+    background-size: cover;
+    grid-row-gap: calc(10vw); }
+  .events-content h2 {
+    background-color: rgba(252, 24, 51, 0.7);
+    grid-area: title; }
+  .events-content p {
+    grid-area: paragraph;
+    color: #fffffe;
+    font-weight: 500; }
+  .events-content__event-1 {
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(../images/chritmas6.jpeg); }
+  .events-content__event-2 {
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(../images/chritmas2.jpeg); }
 
 .events-text {
-  background-color: #118499;
-  grid-column: col-start 10 / center-end; }
+  background-color: #fc1833;
+  grid-column: col-start 10 / center-end;
+  display: grid;
+  place-items: center; }
+  @media only screen and (max-width: 37.5em) {
+    .events-text {
+      display: none; } }
+  .events-text__p {
+    transform: rotate(90deg);
+    display: inline-block;
+    font-size: 6rem;
+    color: #fffffe;
+    letter-spacing: 1px; }
 
 .features-content {
   background-color: #118499;
@@ -312,7 +349,7 @@ body {
     background-size: cover;
     display: grid;
     grid-template-rows: repeat(3, max-content);
-    grid-row-gap: 10rem;
+    grid-row-gap: calc(5vw + 5rem);
     justify-items: center;
     align-content: space-between;
     border-radius: 5px; }
