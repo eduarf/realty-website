@@ -28,6 +28,12 @@
             }
         }
     }
+    &--white{
+        color: $color-main;
+        background-color: rgba($color-secondary, .5);
+        transform: rotateZ(5deg);
+        text-align: center;
+    }
 }
 .heading-5 {
     font-size: calc(1.2rem + 1.2vw);
@@ -36,7 +42,7 @@
 }
 .paragraph{
     color: $color-paragraph;
-    font-size: calc(1rem + 1vw);
+    font-size: calc(1.3rem + 1vw);
     font-weight: 300;
     &--big {
         font-size: calc(1rem + 1.5vw);
@@ -45,5 +51,8 @@
     &--line-height-big {
         line-height: 2;
         text-align: justify;
+    }
+    &--white{
+        color: $color-main;
     }
 }

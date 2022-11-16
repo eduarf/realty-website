@@ -66,6 +66,11 @@ body {
       @media only screen and (max-width: 50em) {
         .heading-2--underline::after {
           left: 30%; } }
+  .heading-2--white {
+    color: #fffffe;
+    background-color: rgba(42, 166, 131, 0.5);
+    transform: rotateZ(5deg);
+    text-align: center; }
 
 .heading-5 {
   font-size: calc(1.2rem + 1.2vw);
@@ -74,7 +79,7 @@ body {
 
 .paragraph {
   color: #5f6c7b;
-  font-size: calc(1rem + 1vw);
+  font-size: calc(1.3rem + 1vw);
   font-weight: 300; }
   .paragraph--big {
     font-size: calc(1rem + 1.5vw);
@@ -82,6 +87,38 @@ body {
   .paragraph--line-height-big {
     line-height: 2;
     text-align: justify; }
+  .paragraph--white {
+    color: #fffffe; }
+
+.link-button:link, .link-button:visited {
+  display: inline-block;
+  font-size: calc(1rem + 1vw);
+  background-color: #fffffe;
+  text-decoration: none;
+  color: #2aa683;
+  font-weight: 600;
+  padding: 1.4rem 2rem;
+  border-radius: 3px;
+  position: relative;
+  overflow: hidden;
+  z-index: 2; }
+  .link-button:link::before, .link-button:visited::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 0%;
+    background-color: #2aa683;
+    transition: height 0.3s ease-in-out;
+    transform: translate(-50%, -50%) rotate(45deg);
+    z-index: -1; }
+  .link-button:link:hover::before, .link-button:visited:hover::before {
+    height: 500%;
+    transform: translate(-50%, -50%) rotate(45deg); }
+
+.link-button:hover, .link-button:active {
+  color: #fffffe; }
 
 .booking-content {
   grid-column: center-start / col-end 6;
@@ -174,7 +211,7 @@ body {
       .booking-date__schedule--arrival > div,
       .booking-date__schedule--departure > div,
       .booking-date__schedule--guests > div {
-        padding: 1.5rem 2.8rem; } }
+        padding: 1.5rem 2.6rem; } }
     .booking-date__schedule--arrival > div::after,
     .booking-date__schedule--departure > div::after,
     .booking-date__schedule--guests > div::after {
@@ -248,10 +285,40 @@ body {
   grid-column: center-start / center-end;
   height: 40rem; }
 
-.villas {
-  background-color: #118499;
+.holidays {
   grid-column: container-start / container-end;
-  height: 40rem; }
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
+  grid-gap: 2rem;
+  padding: 2rem; }
+  @media only screen and (max-width: 30em) {
+    .holidays {
+      grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr)); } }
+  .holidays__holiday {
+    padding: 2rem;
+    transition: transform 0.3s ease-in-out;
+    background-position: center;
+    background-size: cover;
+    display: grid;
+    grid-template-rows: repeat(3, max-content);
+    grid-row-gap: 10rem;
+    justify-items: center;
+    align-content: space-between;
+    border-radius: 5px; }
+  .holidays__holiday:hover {
+    transform: scale(1.01); }
+  .holidays__holiday-1 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../images/chritmas1.jpeg); }
+  .holidays__holiday-2 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../images/chritmas2.jpeg); }
+  .holidays__holiday-3 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../images/chritmas3.jpeg); }
+  .holidays__holiday-4 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../images/chritmas4.jpeg); }
+  .holidays__holiday-5 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../images/chritmas5.jpeg); }
+  .holidays__holiday-6 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../images/chritmas6.jpeg); }
 
 .footer {
   background-color: #2aa683;
@@ -291,7 +358,7 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 2; }
+    z-index: 6; }
   .header__hamburger {
     padding: 1rem;
     background-color: #fc1833;

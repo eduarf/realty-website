@@ -1,5 +1,43 @@
-.villas {
-    background-color: $color-highlight;
+.holidays {
     grid-column: container-start / container-end;
-    height: 40rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
+    grid-gap: 2rem;
+    padding: 2rem;
+    @media only screen and(max-width: $media-query-medium-small){
+        grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+    }
+    &__holiday{
+       padding: 2rem;
+       transition: transform $transition-duration ease-in-out;
+       background-position: center;
+       background-size: cover;
+       display: grid;
+       grid-template-rows: repeat(3, max-content);
+       grid-row-gap: 10rem;
+       justify-items: center;
+       align-content: space-between;
+       border-radius: 5px;
+    }
+    &__holiday:hover{
+        transform: scale(1.01);
+    }
+    &__holiday-1{
+        background-image: linear-gradient(rgba($color-stroke,.4), rgba($color-stroke, .4)) ,url(../images/chritmas1.jpeg);
+    }
+    &__holiday-2{
+        background-image: linear-gradient(rgba($color-stroke,.4), rgba($color-stroke, .4)), url(../images/chritmas2.jpeg);
+    }
+    &__holiday-3{
+        background-image: linear-gradient(rgba($color-stroke,.4), rgba($color-stroke, .4)), url(../images/chritmas3.jpeg);
+    }
+    &__holiday-4{
+        background-image: linear-gradient(rgba($color-stroke,.4), rgba($color-stroke, .4)), url(../images/chritmas4.jpeg);
+    }
+    &__holiday-5{
+        background-image: linear-gradient(rgba($color-stroke,.4), rgba($color-stroke, .4)), url(../images/chritmas5.jpeg);
+    }
+    &__holiday-6{
+        background-image: linear-gradient(rgba($color-stroke,.4), rgba($color-stroke, .4)), url(../images/chritmas6.jpeg);
+    }
 }
