@@ -41,7 +41,7 @@
     grid-column: col-start 10 / center-end;
     display: grid;
     place-items: center;
-    @media only screen and(max-width: $media-query-medium-small-big){
+    @media only screen and(max-width: $media-query-medium){
         display: none;
     }
     &__p {

@@ -1,9 +1,28 @@
 .gallery-text{
     background-color: $color-secondary;
     grid-column: center-start / col-end 1;
-    height: 400px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    place-items: center;
+    @media only screen and(max-width: $media-query-medium){
+        display: none;
+    }
+    p {
+        transform: rotate(-90deg);
+        display: inline-block;
+        font-size: 6rem;
+        color: $color-main;
+        letter-spacing: 1px;
+    }
 }
 .gallery-carousel{
     background-color: $color-stroke;
     grid-column: col-start 2 / container-end;
+    height: 400px;
+    @media only screen and(max-width: $media-query-medium){
+        grid-column: container-start / container-end;
+        grid-template-columns: 1fr;
+        grid-row-gap: 1rem;
+    }
 }
