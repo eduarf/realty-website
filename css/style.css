@@ -324,14 +324,77 @@ body {
     letter-spacing: 1px; }
 
 .gallery-carousel {
-  background-color: #000;
   grid-column: col-start 2 / container-end;
-  height: 400px; }
+  height: 90vh;
+  overflow: hidden;
+  border: solid 0.2rem #2aa683;
+  position: relative; }
   @media only screen and (max-width: 50em) {
     .gallery-carousel {
       grid-column: container-start / container-end;
       grid-template-columns: 1fr;
-      grid-row-gap: 1rem; } }
+      grid-row-gap: 1rem;
+      height: 60vh; } }
+  .gallery-carousel__button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 2px solid #fffffe;
+    color: #fffffe;
+    padding: 1rem;
+    border-radius: 50%;
+    outline: none;
+    font-size: 3rem;
+    z-index: 1;
+    cursor: pointer; }
+  .gallery-carousel__button--right {
+    background-color: rgba(42, 166, 131, 0.7);
+    right: 1rem; }
+  .gallery-carousel__button--left {
+    left: 1rem;
+    background-color: rgba(252, 24, 51, 0.7); }
+  .gallery-carousel__img-container {
+    background-color: #2aa683;
+    height: 100%;
+    width: 100%;
+    position: relative; }
+  .gallery-carousel__list {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    transition: transform 2s ease-in-out; }
+  .gallery-carousel__item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; }
+  .gallery-carousel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; }
+  .gallery-carousel__nav {
+    position: absolute;
+    bottom: 3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(7, 1fr);
+    grid-gap: 3rem; }
+    @media only screen and (max-width: 37.5em) {
+      .gallery-carousel__nav {
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-columns: repeat(4, 1fr); } }
+  .gallery-carousel__nav--btn {
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+    border: none;
+    background-color: #fc1833;
+    cursor: pointer; }
+  .gallery-carousel .current--img {
+    background-color: #2aa683; }
 
 .motto {
   grid-column: container-start / container-end;

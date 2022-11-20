@@ -17,12 +17,85 @@
     }
 }
 .gallery-carousel{
-    background-color: $color-stroke;
     grid-column: col-start 2 / container-end;
-    height: 400px;
+    height: 90vh;
+    overflow: hidden;
+    border: solid .2rem $color-secondary;
+    position: relative;
     @media only screen and(max-width: $media-query-medium){
         grid-column: container-start / container-end;
         grid-template-columns: 1fr;
         grid-row-gap: 1rem;
+        height: 60vh;
+    }
+    &__button{
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        border: 2px solid $color-main;
+        color: $color-main;
+        padding: 1rem;
+        border-radius: 50%;
+        outline: none;
+        font-size: 3rem;
+        z-index: 1;
+        cursor: pointer;
+    }
+    &__button--right{
+        background-color: rgba($color-secondary, .7);
+        right: 1rem;
+    }
+    &__button--left{
+        left: 1rem;
+        background-color: rgba($color-tertiary,  .7);
+    }
+    &__img-container{
+        background-color: $color-secondary;
+        height: 100%;
+        width: 100%;
+        position: relative;
+    }
+    &__list{
+        position: relative;
+        height: 100%;
+        width: 100%;
+        transition: transform 2s ease-in-out;
+    }
+    &__item{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    &__nav{ 
+        position: absolute;
+        bottom: 3rem;
+        left: 50%;
+        transform: translateX(-50%);
+        display: grid;
+        grid-template-rows: 1fr;
+        grid-template-columns: repeat(7, 1fr);
+        grid-gap: 3rem;
+        @media only screen and(max-width: $media-query-medium-small-big){
+            grid-template-rows: repeat(2, 1fr);
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+    &__nav--btn{
+        height: 3rem;
+        width: 3rem;
+        border-radius: 50%;
+        border: none;
+        background-color: $color-tertiary;
+        cursor: pointer;
+    }
+    .current--img{
+        background-color: $color-secondary;
     }
 }
