@@ -27,13 +27,31 @@ const updateDots = (currentDot, targetDot) => {
     targetDot.classList.add('current--img');
 };
 
+const hideShowArrows = (imgs, prevButton, nextButton, targetIndex) => {
+    if(targetIndex === 0){
+        prevButton.classList.add('hidden');
+        nextButton.classList.remove('hidden');
+    }
+    else if(targetIndex === imgs.length -1){
+        prevButton.classList.remove('hidden');
+        nextButton.classList.add('hidden');
+    }
+    else {
+        prevButton.classList.remove('hidden');
+        nextButton.classList.remove('hidden');
+    }
+};
+
+
 nextButton.addEventListener('click',(e) => {
     const currentImg = list.querySelector('.current--img');
     const nextImg = currentImg.nextElementSibling;;
     const currentDot = carouselNav.querySelector('.current--img');
     const nextDot = currentDot.nextElementSibling;
+    const nextIndex = imgs.findIndex((img) => img === nextImg);
     moveToImg(list, currentImg, nextImg);
     updateDots(currentDot, nextDot);
+    hideShowArrows(imgs, prevButton, nextButton, nextIndex);
 });
 
 
@@ -43,8 +61,10 @@ prevButton.addEventListener('click',(e) => {
     const prevImg = currentImg.previousElementSibling;
     const currentDot = carouselNav.querySelector('.current--img');
     const prevDot = currentDot.previousElementSibling;
+    const prevIndex = imgs.findIndex((img) => img === prevImg);
     moveToImg(list, currentImg, prevImg);
     updateDots(currentDot, prevDot);
+    hideShowArrows(imgs, prevButton, nextButton, prevIndex);
 });
 
 // When we click on the Carousel Nav, switch the images
@@ -64,5 +84,5 @@ carouselNav.addEventListener('click',(e) => {
 
     moveToImg(list, currentImg, targetImg);
     updateDots(currentDot, targetDot);
-
+    hideShowArrows(imgs, prevButton, nextButton, targetIndex);
 });

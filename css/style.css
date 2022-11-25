@@ -397,6 +397,9 @@ body {
 .current--img {
   background-color: #2aa683; }
 
+.hidden {
+  display: none; }
+
 .motto {
   grid-column: container-start / container-end;
   background-color: #fffffe;
