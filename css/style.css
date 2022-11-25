@@ -380,12 +380,12 @@ body {
     transform: translateX(-50%);
     display: grid;
     grid-template-rows: 1fr;
-    grid-template-columns: repeat(7, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     grid-gap: 3rem; }
     @media only screen and (max-width: 37.5em) {
       .gallery-carousel__nav {
         grid-template-rows: repeat(2, 1fr);
-        grid-template-columns: repeat(4, 1fr); } }
+        grid-template-columns: repeat(3, 1fr); } }
   .gallery-carousel__nav--btn {
     height: 3rem;
     width: 3rem;
@@ -494,7 +494,8 @@ body {
     z-index: 2;
     display: grid;
     place-items: center;
-    animation: hamburgerAnim 3s; }
+    animation: hamburgerAnim 3s;
+    border-radius: 3px; }
   .header__checkbox:checked ~ .header__menu {
     visibility: visible;
     transform: scaleX(1); }
@@ -521,7 +522,7 @@ body {
       content: '';
       position: absolute;
       top: -1rem;
-      width: 75%;
+      width: 100%;
       height: inherit;
       background-color: inherit;
       z-index: 2; }
