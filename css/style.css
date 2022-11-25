@@ -393,8 +393,9 @@ body {
     border: none;
     background-color: #fc1833;
     cursor: pointer; }
-  .gallery-carousel .current--img {
-    background-color: #2aa683; }
+
+.current--img {
+  background-color: #2aa683; }
 
 .motto {
   grid-column: container-start / container-end;
